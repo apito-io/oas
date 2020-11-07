@@ -9,6 +9,15 @@ func CookieParameter(name string, s *Schema, required bool) *Parameter {
 	return p
 }
 
+func BodyParameter(name string, s *Schema, required bool) *Parameter {
+	p := &Parameter{}
+	p.Name = name
+	p.In = PositionCookie
+	p.Required = required
+	p.Schema = s
+	return p
+}
+
 func HeaderParameter(name string, s *Schema, required bool) *Parameter {
 	p := &Parameter{}
 	p.Name = name
@@ -196,6 +205,7 @@ const (
 	PositionPath            = "path"
 	PositionHeader          = "header"
 	PositionCookie          = "cookie"
+	PositionBody            = "body"
 )
 
 type ParameterStyle string
