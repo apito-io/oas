@@ -12,7 +12,7 @@ func CookieParameter(name string, s *Schema, required bool) *Parameter {
 func BodyParameter(name string, s *Schema, required bool) *Parameter {
 	p := &Parameter{}
 	p.Name = name
-	p.In = PositionCookie
+	p.In = PositionBody
 	p.Required = required
 	p.Schema = s
 	return p
