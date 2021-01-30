@@ -27,12 +27,13 @@ func (o *WithSecurityRequirement) AddSecurityRequirement(sr *SecurityRequirement
 
 type SecurityRequirement map[string][]string
 
-func NewAPIKeySecurityScheme(name string, in Position) *SecurityScheme {
+func NewAPIKeySecurityScheme(name string, description string, in Position) *SecurityScheme {
 	return &SecurityScheme{
 		SecuritySchemeObject: SecuritySchemeObject{
 			Type: SecurityTypeAPIKey,
 			Name: name,
 			In:   in,
+			Description: description,
 		},
 	}
 }

@@ -10,7 +10,7 @@ func TestSecurityScheme(t *testing.T) {
 	g.It("empty", `{"type":""}`, SecurityScheme{})
 
 	g.It("with api key", `{"type":"apiKey","name":"AccessToken","in":"header"}`, func() *SecurityScheme {
-		server := NewAPIKeySecurityScheme("AccessToken", PositionHeader)
+		server := NewAPIKeySecurityScheme("AccessToken", "", PositionHeader)
 		return server
 	}())
 
